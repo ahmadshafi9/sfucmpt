@@ -3,6 +3,7 @@ import random
 # List of random employee names
 employee_names = ["Ahmad (000-000-0000)", "Uday (111-111-1111)", "Brian (222-222-2222)", "Fraser (333-333-3333)",
                    "Dan (444-444-4444)"]
+
 # Keywords for each service
 children_youth_familysupport = ["children", "youth", "family", "support"]
 diversity_inclusion_training = ["diversity", "inclusion", "training"]
@@ -20,7 +21,6 @@ def format_name(name):
     return name.strip().capitalize()
 
 # Loop everything 3 times
-# give them 10 options to pick from 
 for i in range(3):
     # Random employee name selection
     employee = random.choice(employee_names)
@@ -39,10 +39,9 @@ for i in range(3):
     print("Enter 9 for Settlement Services")
     print("Enter 10 for Violence Prevention and Support")
 
-    # ask the user to enter a number from 1-10 depending on what they want or they can also type it out
+    # Corrected input and .lower() method call
     servicechoice = input("Please enter the number corresponding to your choice\n"
-    "or if you know which service you want please put that: ").strip().lower
-
+        "or if you know which service you want please write that: (1 word) ").strip().lower()
 
     # give the user more information on what they want
     if servicechoice == "1" or any(keyword in servicechoice for keyword in children_youth_familysupport):
@@ -113,3 +112,4 @@ for i in range(3):
         print("Your feedback is appreciated and has been reported to our agents!")
     else:
         print(f"Error 101: Invalid input. Please contact {employee} for more support!")
+
